@@ -1,9 +1,10 @@
 import { Outlet, useNavigation } from "react-router-dom";
-// import { Footer } from "./Footer";
 import { Header } from "../navbar/Header";
+import { Footer } from "../Footer/Footer";
 // import { Loading } from "./Loading";
 
 const AppLayout = () => {
+  
   const navigation = useNavigation();
   
   console.log(navigation);
@@ -14,7 +15,7 @@ const AppLayout = () => {
     <>
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

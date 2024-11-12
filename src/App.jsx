@@ -2,8 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./layout/AppLayout";
 import { Home } from "./Pages/Home";
 import { MoviesCard } from "./components/MoviesCard";
+import { Footer } from "./Footer/Footer";
 
 export const App=()=>{
+      
 
     const router = createBrowserRouter([
       {
@@ -17,6 +19,10 @@ export const App=()=>{
                   {
                         path:"/moviescard",
                         element :<MoviesCard/>
+                  },  
+                  {
+                        path:"/footer",
+                        element :<Footer/>
                   },                 
             ]
      },

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../navbar/Header.css';
 import { RxAvatar } from "react-icons/rx";
 
-export const Header = () => {
+export const Header = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = () => {
+    onSearch(searchTerm); // Pass search term to MoviesCard
+  };
+
   return (
     <div>
       <nav className="navbar">
@@ -15,8 +21,14 @@ export const Header = () => {
         </ul>
 
         <div className="right-container">
-          <input type="text" className="search-box" placeholder="search" />
-          <button className="Subscribe">Search</button>
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className="Subscribe" onClick={handleSearch}>Search</button>
           <a href="#" className="login-btn">
             <RxAvatar className="avatar-icon" />
             <span className="login-text">Login</span>
