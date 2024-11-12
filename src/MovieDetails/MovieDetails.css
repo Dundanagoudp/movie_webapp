@@ -10,7 +10,8 @@
       margin: 0 auto;
       min-height: 100vh;
       position: relative;
-      padding-top: 60px;
+      /* padding-top: 60px; */
+      margin-top: 40px !important;
     }
     
     .movie-details-poster-container {

@@ -12,11 +12,11 @@ export const Header = ({ onSearch }) => {
   return (
     <div>
       <nav className="navbar">
-        <img src="./logo.png" className="brand-logo" to="/" />
+        <img src="./logo.png" className="brand-logo" to="/home" />
         <ul className="nav-links">
           <li className="nav-items"><a href="/">Home</a></li>
           <li className="nav-items"><a href="#">Movie</a></li>
-          <li className="nav-items"><a href="#">Sports</a></li>
+          <li className="nav-items"><a href="/sports">Sports</a></li>
         </ul>
 
         <div className="right-container">
