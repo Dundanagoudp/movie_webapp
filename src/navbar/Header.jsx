@@ -6,7 +6,7 @@ export const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
-    onSearch(searchTerm);  // Pass searchTerm to parent component (MoviesCard)
+    onSearch(searchTerm);  
   };
 
   return (
