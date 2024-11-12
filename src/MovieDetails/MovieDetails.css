@@ -1,0 +1,134 @@
+.movie-details-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      background-color: #0C111B;
+      color: #ffffff;
+      padding: 40px 20px;
+      max-width: 1200px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      padding-top: 60px;
+    }
+    
+    .movie-details-poster-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .movie-details-poster {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .movie-details-toggle-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #1E2A38;
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    
+    .movie-details-toggle-btn:hover {
+      background-color: #ffffff;
+      color: #0C111B;
+    }
+    
+    .movie-details-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+      height: 100%;
+      position: relative;
+    }
+    
+    .movie-details-info {
+      background-color: #1C1C1C;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .movie-details-info.show {
+      max-height: 800px;
+      opacity: 1;
+    }
+    
+    .movie-details-title {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .movie-details-movie-detail-item {
+      margin-bottom: 8px;
+      font-size: 1em;
+    }
+    
+    .movie-details-plot,
+    .movie-details-actors,
+    .movie-details-awards,
+    .movie-details-box-office {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    
+    .movie-details-go-back-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #FF6347;
+      border: none;
+      color: #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+      align-self: flex-end;
+    }
+    
+    .movie-details-go-back-btn:hover {
+      background-color: #ffffff;
+      color: #0C111B;
+    }
+    
+    @media (max-width: 768px) {
+      .movie-details-container {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+      }
+      .movie-details-poster-container,
+      .movie-details-content {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .movie-details-toggle-btn,
+      .movie-details-go-back-btn {
+        width: 100%;
+        position: static;
+        transform: none;
+      }
+    }
+    
