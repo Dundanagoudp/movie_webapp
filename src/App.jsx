@@ -3,10 +3,10 @@ import AppLayout from "./layout/AppLayout";
 import { Home } from "./Pages/Home";
 import { MoviesCard } from "./components/MoviesCard";
 import { Footer } from "./Footer/Footer";
+import { MovieCardDetails } from "./MovieDetails/MovieDetails";
 
 export const App=()=>{
       
-
     const router = createBrowserRouter([
       {
             path:"/",
@@ -19,6 +19,10 @@ export const App=()=>{
                   {
                         path:"/moviescard",
                         element :<MoviesCard/>
+                  },  
+                  {
+                        path:"/moviecarddetails/:id",
+                        element :<MovieCardDetails/>
                   },  
                   {
                         path:"/footer",

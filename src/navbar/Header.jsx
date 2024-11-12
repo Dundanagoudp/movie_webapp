@@ -6,7 +6,7 @@ export const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
-    onSearch(searchTerm); // Pass search term to MoviesCard
+    onSearch(searchTerm); 
   };
 
   return (
@@ -17,7 +17,6 @@ export const Header = ({ onSearch }) => {
           <li className="nav-items"><a href="/">Home</a></li>
           <li className="nav-items"><a href="#">Movie</a></li>
           <li className="nav-items"><a href="#">Sports</a></li>
-          <li className="nav-items"><a href="#">Premium</a></li>
         </ul>
 
         <div className="right-container">

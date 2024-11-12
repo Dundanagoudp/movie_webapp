@@ -87,7 +87,7 @@ export const MoviesCard = () => {
                 <div className="card-body">
                   <h2 className="name">{movie.Title}</h2>
                   <p className="des">Year: {movie.Year}</p>
-                  <Link to={`/moviedetails/${movie.imdbID}`} className="view-details-button">
+                  <Link to={`/moviecarddetails/${movie.imdbID}`} className="view-details-button">
                     View Details
                   </Link>
                 </div>
@@ -112,7 +112,7 @@ export const MoviesCard = () => {
                 <div className="card-body">
                   <h2 className="name">{movie.Title}</h2>
                   <p className="des">Year: {movie.Year}</p>
-                  <Link to={`/moviedetails/${movie.imdbID}`} className="view-details-button">
+                  <Link to={`/moviecarddetails/${movie.imdbID}`} className="view-details-button">
                     View Details
                   </Link>
                 </div>
@@ -137,7 +137,7 @@ export const MoviesCard = () => {
                 <div className="card-body">
                   <h2 className="name">{movie.Title}</h2>
                   <p className="des">Year: {movie.Year}</p>
-                  <Link to={`/moviedetails/${movie.imdbID}`} className="view-details-button">
+                  <Link to={`/moviecarddetails/${movie.imdbID}`} className="view-details-button">
                     View Details
                   </Link>
                 </div>
@@ -159,7 +159,7 @@ export const MoviesCard = () => {
                 <div className="card-body">
                   <h2 className="name">{movie.Title}</h2>
                   <p className="des">Year: {movie.Year}</p>
-                  <Link to={`/moviedetails/${movie.imdbID}`} className="view-details-button">
+                  <Link to={`/moviecarddetails/${movie.imdbID}`} className="view-details-button">
                     View Details
                   </Link>
                 </div>
