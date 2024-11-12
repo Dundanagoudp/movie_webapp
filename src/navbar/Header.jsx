@@ -6,7 +6,7 @@ export const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
-    onSearch(searchTerm); 
+    onSearch(searchTerm);  // Pass searchTerm to parent component (MoviesCard)
   };
 
   return (
@@ -15,7 +15,7 @@ export const Header = ({ onSearch }) => {
         <img src="./logo.png" className="brand-logo" to="/home" />
         <ul className="nav-links">
           <li className="nav-items"><a href="/">Home</a></li>
-          <li className="nav-items"><a href="#">Movie</a></li>
+          <li className="nav-items"><a href="/moviescard">Movie</a></li>
           <li className="nav-items"><a href="/sports">Sports</a></li>
         </ul>
 

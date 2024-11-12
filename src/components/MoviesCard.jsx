@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import "../components/MoviesCard.css";
 import { Link } from "react-router-dom";
-import { MovieCards, MovieKannada ,MovieHindi,SportsIpl} from "../api/MovieDataApi";
+import { MovieCards, MovieKannada, MovieHindi, SportsIpl } from "../api/MovieDataApi";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-export const MoviesCard = () => {
+export const MoviesCard = ({ searchTerm }) => {
   const [englishMovies, setEnglishMovies] = useState([]);
   const [kannadaMovies, setKannadaMovies] = useState([]);
   const [hindiMovies, setHindiMovies] = useState([]);
@@ -55,6 +55,16 @@ export const MoviesCard = () => {
     fetchIplNews();
   }, []);
 
+  // Function to filter movies based on the search term
+  const filterMovies = (movies) => {
+    if (!searchTerm) return movies; // If no search term, return all movies
+  
+    return movies.filter(movie => {
+      // Check if movie.Title exists and is a string, then apply toLowerCase
+      return movie.Title && movie.Title.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+  };
+
   const scrollLeft = (ref) => {
     if (ref.current) {
       ref.current.scrollLeft -= 200;
@@ -80,8 +90,8 @@ export const MoviesCard = () => {
         </button>
 
         <div className="card-container" ref={englishCardContainerRef}>
-          {englishMovies && englishMovies.length > 0 ? (
-            englishMovies.map((movie) => (
+          {filterMovies(englishMovies).length > 0 ? (
+            filterMovies(englishMovies).map((movie) => (
               <div className="card" key={movie.imdbID}>
                 <img src={movie.Poster} alt={movie.Title} className="card-img" />
                 <div className="card-body">
@@ -94,7 +104,7 @@ export const MoviesCard = () => {
               </div>
             ))
           ) : (
-            <p>Loading movies...</p>
+            <p>No movies found.</p>
           )}
         </div>
       </div>
@@ -102,11 +112,9 @@ export const MoviesCard = () => {
       {/* Kannada Movies Section */}
       <h1 className="title">Kannada Movies</h1>
       <div className="movies-list">
-       
-
         <div className="card-container" ref={kannadaCardContainerRef}>
-          {kannadaMovies && kannadaMovies.length > 0 ? (
-            kannadaMovies.map((movie) => (
+          {filterMovies(kannadaMovies).length > 0 ? (
+            filterMovies(kannadaMovies).map((movie) => (
               <div className="card" key={movie.imdbID}>
                 <img src={movie.Poster} alt={movie.Title} className="card-img" />
                 <div className="card-body">
@@ -119,19 +127,17 @@ export const MoviesCard = () => {
               </div>
             ))
           ) : (
-            <p>Loading movies...</p>
+            <p>No movies found.</p>
           )}
         </div>
       </div>
 
-      
+      {/* Hindi Movies Section */}
       <h1 className="title">Hindi Movies</h1>
       <div className="movies-list">
-        
-
         <div className="card-container" ref={kannadaCardContainerRef}>
-          {hindiMovies && hindiMovies.length > 0 ? (
-            hindiMovies.map((movie) => (
+          {filterMovies(hindiMovies).length > 0 ? (
+            filterMovies(hindiMovies).map((movie) => (
               <div className="card" key={movie.imdbID}>
                 <img src={movie.Poster} alt={movie.Title} className="card-img" />
                 <div className="card-body">
@@ -144,16 +150,17 @@ export const MoviesCard = () => {
               </div>
             ))
           ) : (
-            <p>Loading movies...</p>
+            <p>No movies found.</p>
           )}
         </div>
       </div>
-      <div className="movies-list">
-        
+
+      {/* Sports News Section */}
       <h1 className="title">Sports News</h1>
+      <div className="movies-list">
         <div className="card-container" ref={kannadaCardContainerRef}>
-          {iplnews && iplnews.length > 0 ? (
-            iplnews.map((movie) => (
+          {filterMovies(iplnews).length > 0 ? (
+            filterMovies(iplnews).map((movie) => (
               <div className="card" key={movie.imdbID}>
                 <img src={movie.Poster} alt={movie.Title} className="card-img" />
                 <div className="card-body">
@@ -166,7 +173,7 @@ export const MoviesCard = () => {
               </div>
             ))
           ) : (
-            <p>Loading movies...</p>
+            <p>No news found.</p>
           )}
         </div>
       </div>

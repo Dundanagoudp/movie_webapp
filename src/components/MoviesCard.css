@@ -129,6 +129,7 @@ body {
   overflow-y: visible;
   scroll-behavior: smooth;
   padding-left: 10px;
+  margin-top: 50px !important;
 }
 
 .movies-list::-webkit-scrollbar-track {
