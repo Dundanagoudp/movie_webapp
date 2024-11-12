@@ -1,7 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import { Header } from "../navbar/Header";
 import { Footer } from "../Footer/Footer";
-// import { Loading } from "./Loading";
 
 const AppLayout = () => {
   
