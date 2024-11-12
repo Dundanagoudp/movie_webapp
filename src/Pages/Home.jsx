@@ -24,25 +24,23 @@ export const Home = () => {
 
   return (
     <div>
-      {/* Carousel Section */}
       <div className="carousel-container">
         <div className="carousel">
           <div className="slider" key={slideIndex}>
-            <img src={movieImages[slideIndex]}  />
+            <img src={movieImages[slideIndex]} />
           </div>
         </div>
       </div>
 
-      {/* Image Card Container */}
       <div className="video-card-container">
         {movieImages.map((image, index) => (
           <div className="video-card" key={index}>
-            <img src={image}  className="video-card-image" />
+            <img src={image} className="video-card-image" />
           </div>
         ))}
       </div>
       <div>
-        <MoviesCard/>
+        <MoviesCard />
       </div>
     </div>
   );

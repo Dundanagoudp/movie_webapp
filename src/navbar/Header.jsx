@@ -12,7 +12,7 @@ export const Header = ({ onSearch }) => {
   return (
     <div>
       <nav className="navbar">
-        <img src="./logo.png" className="brand-logo" to="/home" />
+        <img src="./logo.png" className="brand-logo" alt="logo" />
         <ul className="nav-links">
           <li className="nav-items"><a href="/">Home</a></li>
           <li className="nav-items"><a href="/moviescard">Movie</a></li>
@@ -27,7 +27,7 @@ export const Header = ({ onSearch }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="Subscribe" onClick={handleSearch}>Search</button>
+          <button className="search" onClick={handleSearch}>Search</button>
           <a href="#" className="login-btn">
             <RxAvatar className="avatar-icon" />
             <span className="login-text">Login</span>

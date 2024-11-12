@@ -9,7 +9,6 @@ const[sports1,setSports1]=useState([]);
 const[sporticc,setSportsIcc]=useState([]);
 const[sporticc1,setSportsIcc1]=useState([])
 
-
   const fetchIplNews = async () => {
     try {
       const res = await SportsIpl();

@@ -64,24 +64,6 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.watchlist-btn {
-  position: relative;
-  width: 100%;
-  text-transform: capitalize;
-  background: none;
-  border: none;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  padding: 10px 5px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.watchlist-btn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
 
 .card-video,
 .video-card-image {
