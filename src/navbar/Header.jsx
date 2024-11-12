@@ -12,7 +12,7 @@ export const Header = ({ onSearch }) => {
   return (
     <div>
       <nav className="navbar">
-        <img src="./images/logo.png" className="brand-logo" alt="disney+ logo" />
+        <img src="./logo.png" className="brand-logo" to="/" />
         <ul className="nav-links">
           <li className="nav-items"><a href="/">Home</a></li>
           <li className="nav-items"><a href="#">Movie</a></li>
