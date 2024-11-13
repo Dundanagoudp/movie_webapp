@@ -25,7 +25,8 @@ export const Header = ({ onSearch }) => {
             className="search-box"
             placeholder="Search"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}  
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}  
           />
           <button className="search" onClick={handleSearch}>Search</button>
           <a href="#" className="login-btn">

@@ -10,8 +10,7 @@ export const getMovieDetails = async(movieID)=>{
             console.log(res.data);
             return res.data;
             } catch (error) {
-            console.log(error);
-            
+            console.log(error);           
       }
 }
 

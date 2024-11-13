@@ -15,7 +15,7 @@ export const MoviesCard = ({ searchTerm }) => {
   const fetchEnglishMovies = async () => {
     try {
       const res = await MovieCards();
-      setEnglishMovies(res.data.Search);
+      setEnglishMovies(res.data.Search || []);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +24,7 @@ export const MoviesCard = ({ searchTerm }) => {
   const fetchKannadaMovies = async () => {
     try {
       const res = await MovieKannada();
-      setKannadaMovies(res.data.Search);
+      setKannadaMovies(res.data.Search || []);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +33,7 @@ export const MoviesCard = ({ searchTerm }) => {
   const fetchHindiMovies = async () => {
     try {
       const res = await MovieHindi();
-      setHindiMovies(res.data.Search);
+      setHindiMovies(res.data.Search || []);
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +42,7 @@ export const MoviesCard = ({ searchTerm }) => {
   const fetchIplNews = async () => {
     try {
       const res = await SportsIpl();
-      setIplNews(res.data.Search);
+      setIplNews(res.data.Search || []);
     } catch (error) {
       console.log(error);
     }
@@ -57,12 +57,10 @@ export const MoviesCard = ({ searchTerm }) => {
 
   // Function to filter movies based on the search term
   const filterMovies = (movies) => {
-    if (!searchTerm) return movies; // If no search term, return all movies
-  
-    return movies.filter(movie => {
-      // Check if movie.Title exists and is a string, then apply toLowerCase
-      return movie.Title && movie.Title.toLowerCase().includes(searchTerm.toLowerCase());
-    });
+    if (!searchTerm) return movies;
+    return movies.filter((movie) => 
+      movie.Title && movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   };
 
   const scrollLeft = (ref) => {

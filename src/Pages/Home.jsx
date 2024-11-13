@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useOutletContext } from "react-router-dom";  // To access searchTerm from AppLayout
 import '../Pages/Home.css';
 import { MoviesCard } from '../components/MoviesCard';
 
@@ -11,6 +12,7 @@ const movieImages = [
 ];
 
 export const Home = () => {
+  const { searchTerm } = useOutletContext();  // Access searchTerm from AppLayout
   const [slideIndex, setSlideIndex] = useState(0);
 
   const createSlide = () => {
@@ -27,7 +29,7 @@ export const Home = () => {
       <div className="carousel-container">
         <div className="carousel">
           <div className="slider" key={slideIndex}>
-            <img src={movieImages[slideIndex]} />
+            <img src={movieImages[slideIndex]} alt="carousel slide" />
           </div>
         </div>
       </div>
@@ -35,12 +37,13 @@ export const Home = () => {
       <div className="video-card-container">
         {movieImages.map((image, index) => (
           <div className="video-card" key={index}>
-            <img src={image} className="video-card-image" />
+            <img src={image} className="video-card-image" alt="video card" />
           </div>
         ))}
       </div>
+
       <div>
-        <MoviesCard />
+        <MoviesCard searchTerm={searchTerm} /> {/* Pass searchTerm to MoviesCard */}
       </div>
     </div>
   );
